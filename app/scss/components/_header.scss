@@ -1,0 +1,28 @@
+@use '../util/__util' as *;
+header {
+    min-height: 80vh;
+    padding-top: 20px;
+
+    @include bgimageMobile(image-hero);
+    @include breakpoint('mlarge') {
+        @include bgimageDesktop(image-hero);
+       min-height: 60vh;
+    }
+
+    #header-box {
+        max-width: 400px;
+        min-height: 150px;
+        border: 2px solid var(--White);
+        padding: 15px;
+        margin: 10% 0;
+        h1 {
+            font-size: 3.5rem;
+            color: var(--White);
+        }
+        @include breakpoint-down(small) {
+            margin: 50% 0;
+        }
+    }
+
+
+}

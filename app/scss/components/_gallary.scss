@@ -1,0 +1,159 @@
+@use '../util/__util' as *;
+.gallary-container {
+    background-color: var(--White);
+
+    h2 {
+        font-size: 3.5rem;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        font-weight: 300;
+    }
+    text-align: center;
+
+
+    .gallary-img-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: left;
+       
+        .gallary-img {
+            height: 200px;
+            width: 100%;
+            margin: 20px 0;
+            background-position: center;
+            position: relative;
+        }
+        .gallary-img-1 {
+            @include bgimageMobile(image-deep-earth);
+        }
+        .gallary-img-2 {
+            @include bgimageMobile(image-night-arcade);
+        }
+        .gallary-img-3 {
+            @include bgimageMobile(image-soccer-team);
+        }
+        .gallary-img-4 {
+            @include bgimageMobile(image-grid);
+        }
+        .gallary-img-5 {
+            @include bgimageMobile(image-from-above);
+        }
+        .gallary-img-6 {
+            @include bgimageMobile(image-pocket-borealis);
+        }
+        .gallary-img-7 {
+            @include bgimageMobile(image-curiosity);
+        }
+        .gallary-img-8 {
+            @include bgimageMobile(image-fisheye);
+        }
+
+        .gallary-text {
+            position: absolute;
+            font-size: 40px;
+            text-transform: uppercase;
+            color: var(--White);
+            width: 210px;
+            bottom: 5%;
+            left: 5%;
+        }
+    }
+
+    button {
+        background-color: var(--White);
+        text-transform: uppercase;
+       width: 150px;
+       height: 30px;
+       transition: .5s all ease-in-out;
+       border: 1px solid var(--Black);
+       &:hover {
+        font-weight: 700;
+        letter-spacing: 3px;
+        border: 5px solid var(--White);
+        background-color: var(--Black);
+        color: var(--White);
+       }
+    }
+
+
+    @include breakpoint(medium) {
+        .wrapper {
+            position: relative;
+        }
+       
+        h2 {
+            text-align: left;
+            letter-spacing: 5px;
+        }
+        .gallary-img-container {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 15px;
+
+            .gallary-img {
+                height: 550px;
+                width: 100%;
+                margin: 20px 0;
+                background-position: top;
+                position: relative;
+                transition: all .3s ease-in-out;
+                opacity: 1;
+
+                &:hover {
+                    transform: scale(1.1);
+                    z-index: 999;
+                    border: 2px solid yellow;
+                    opacity: 0.5;
+                }
+            }
+            .gallary-img-1 {
+                @include bgimageDesktop(image-deep-earth);
+            }
+            .gallary-img-2 {
+                @include bgimageDesktop(image-night-arcade);
+            }
+            .gallary-img-3 {
+                @include bgimageDesktop(image-soccer-team);
+            }
+            .gallary-img-4 {
+                @include bgimageDesktop(image-grid);
+            }
+            .gallary-img-5 {
+                @include bgimageDesktop(image-from-above);
+            }
+            .gallary-img-6 {
+                @include bgimageDesktop(image-pocket-borealis);
+            }
+            .gallary-img-7 {
+                @include bgimageDesktop(image-curiosity);
+            }
+            .gallary-img-8 {
+                @include bgimageDesktop(image-fisheye);
+            }
+    
+            .gallary-text {
+                position: absolute;
+                font-size: 40px;
+                text-transform: uppercase;
+                color: var(--White);
+                width: 210px;
+                bottom: 5%;
+                left: 15%;
+            }
+        }
+
+        button {
+            position: absolute;
+            top: 6px;
+            right: 0;
+            height: 40px;
+        }
+    }
+
+    @include breakpoint(mlarge) {
+        .gallary-img-container {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+}

@@ -1,0 +1,21 @@
+@mixin bgimageSvg($name) {
+    $url: "../../images/#{$name}.svg";
+    background-image: url($url);
+    background-repeat: no-repeat;
+   
+  }
+  @mixin bgimageMobile($name) {
+    $url: "../../images/mobile/#{$name}.jpg";
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  @mixin bgimageDesktop($name) {
+    $url: "../../images/desktop/#{$name}.jpg";
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  
